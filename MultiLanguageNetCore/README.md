@@ -4,7 +4,7 @@
 
 ### 設定資源檔的路徑
 
-```
+```cs
 builder.Services.AddLocalization(options =>
 {
     options.ResourcesPath = "Resources";
@@ -53,7 +53,7 @@ https://yourdomain.com?culture=en-us
 Cookie 的語系判斷的 Cookie 名稱是 **.AspNetCore.Culture** ，值的規則是 **c=&lt;lang&gt;|uic=&lt;lang&gt;** ， 例： c=zh-tw|uic=zh-tw 。
 
 若要更改 cookie ，將 culture 改為其它語系
-```
+```cs
     Response.Cookies.Append(  
         CookieRequestCultureProvider.DefaultCookieName,  
         CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),  
@@ -73,7 +73,7 @@ Cookie 的語系判斷的 Cookie 名稱是 **.AspNetCore.Culture** ，值的規�
 ### Controller 取值
 DI *IStringLocalizer<Controller Name>* 在 Controller 的建構子中，再根據 Resource 中定義的 Key 值來取資料
 
-```
+```cs
 private readonly IStringLocalizer<HomeController> _stringLocalizer;
 
 public HomeController(ILogger<HomeController> logger, IStringLocalizer<HomeController> stringLocalizer)
@@ -91,7 +91,7 @@ public IActionResult Index()
 
 ### Views 取值 
 Inject `IViewLocalizer` 再用 Key 值取資料
-```
+```cs
 @inject IViewLocalizer _localizer
 
 <h1>@_localizer["Welcome"]</h1>

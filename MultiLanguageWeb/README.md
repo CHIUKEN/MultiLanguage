@@ -52,7 +52,7 @@ routes.MapRoute(
 
 目前這個專案中的Resource有設定 `AppName`，所以在 *_Layout.cshtml* 就可以用 `Resources.AppName` 來拿相對應的值。
 
-```
+```cs
 @Html.ActionLink(Resources.AppName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
 ```
 
