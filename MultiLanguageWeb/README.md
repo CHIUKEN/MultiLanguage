@@ -2,7 +2,7 @@
 
 ## Route
 
-§ó·s RouteConfig.cs¡A·s¼W `culture` ¦burl°Ñ¼Æ¤¤¡C*constraints* ¬O¨Ó¬ù§ô culture °Ñ¼Æ¡A­Y¤£¬O¦b contrains ¤¤«h·|¦^¶Ç 404¡C
+æ›´æ–° RouteConfig.csï¼Œæ–°å¢ `culture` åœ¨urlåƒæ•¸ä¸­ã€‚*constraints* æ˜¯ä¾†ç´„æŸ culture åƒæ•¸ï¼Œè‹¥ä¸æ˜¯åœ¨ contrains ä¸­å‰‡æœƒå›å‚³ 404ã€‚
 ```cs
 routes.MapRoute(
     name: "Default",
@@ -20,15 +20,15 @@ routes.MapRoute(
 
 ## BaseController
 
-¥Øªº¬OÂĞ¼g `OnActionExecuting` ³o­Ó function¡AÂĞ¼g³o­Ófunction ¨Ó³B²z Cookie ¤Î Url ¤¤ªº°Ñ¼Æ¡C¤§«á¨C¤@­Ó Controller ¦AÄ~©Ó BaseController ¡C
+ç›®çš„æ˜¯è¦†å¯« `OnActionExecuting` é€™å€‹ functionï¼Œè¦†å¯«é€™å€‹function ä¾†è™•ç† Cookie åŠ Url ä¸­çš„åƒæ•¸ã€‚ä¹‹å¾Œæ¯ä¸€å€‹ Controller å†ç¹¼æ‰¿ BaseController ã€‚
 
-## ¸ê®ÆÀÉ
+## è³‡æ–™æª”
 
-·s¼W Resources ¸ê®Æ§¨(¤]¤£¤@©w¥²¶·¬°³o­Ó¦WºÙ¡A³o­Ó¥u¬O­Ó namespace )¡A³o­Ó¸ê®Æ§¨¤¤©ñªº¬O `.resx` ªº°ÆÀÉ¦W¡AÀÉ®×¦WºÙ³W«h *Resources.{culture-code}.resx*  ¡A¦s¨ú­×¹¢µü(Access Modify) ¶·½Õ¾ã¬° **public**
+æ–°å¢ Resources è³‡æ–™å¤¾(ä¹Ÿä¸ä¸€å®šå¿…é ˆç‚ºé€™å€‹åç¨±ï¼Œé€™å€‹åªæ˜¯å€‹ namespace )ï¼Œé€™å€‹è³‡æ–™å¤¾ä¸­æ”¾çš„æ˜¯ `.resx` çš„å‰¯æª”åï¼Œæª”æ¡ˆåç¨±è¦å‰‡ *Resources.{culture-code}.resx*  ï¼Œå­˜å–ä¿®é£¾è©(Access Modify) é ˆèª¿æ•´ç‚º **public**
 
-### §ó§ï Views/Web.config
+### æ›´æ”¹ Views/Web.config
 
-·s¼W Resources ªº©R¦WªÅ¶¡¦b Web.config ¤¤¡A¬°ªº¬O¦b®³ Resources ¤¤ªºÅÜ¼Æ¡A¥i¥H¤Ö¼g namespace
+æ–°å¢ Resources çš„å‘½åç©ºé–“åœ¨ Web.config ä¸­ï¼Œç‚ºçš„æ˜¯åœ¨æ‹¿ Resources ä¸­çš„è®Šæ•¸ï¼Œå¯ä»¥å°‘å¯« namespace
 
 ```xml
   <system.web.webPages.razor>
@@ -48,9 +48,9 @@ routes.MapRoute(
 ```
 
 ## Views
-¦b»İ¸ò¬Û¹ïÀ³ªº»y¨t¶i¦æ½Õ¾ãªº¦a¤è¡A¨Ï¥Î *Resources.Your Setting String* ¨Ó¨Ï¥Î¡C
+åœ¨éœ€è·Ÿç›¸å°æ‡‰çš„èªç³»é€²è¡Œèª¿æ•´çš„åœ°æ–¹ï¼Œä½¿ç”¨ *Resources.Your Setting String* ä¾†ä½¿ç”¨ã€‚
 
-¥Ø«e³o­Ó±M®×¤¤ªºResource¦³³]©w `AppName`¡A©Ò¥H¦b *_Layout.cshtml* ´N¥i¥H¥Î `Resources.AppName` ¨Ó®³¬Û¹ïÀ³ªº­È¡C
+ç›®å‰é€™å€‹å°ˆæ¡ˆä¸­çš„Resourceæœ‰è¨­å®š `AppName`ï¼Œæ‰€ä»¥åœ¨ *_Layout.cshtml* å°±å¯ä»¥ç”¨ `Resources.AppName` ä¾†æ‹¿ç›¸å°æ‡‰çš„å€¼ã€‚
 
 ```
 @Html.ActionLink(Resources.AppName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
@@ -58,9 +58,9 @@ routes.MapRoute(
 
 ## Global.asax
 
-¦b Global.asax ¤¤ `Application_BeginRequest` ¬OÀ³¥Îµ{¦¡ªº²Ä¤@­Ó¶i¤JÂI¡A¤]¥i¥H±q³o¸Ì¨ú±o `culture` Cookie ªº­È¡C
+åœ¨ Global.asax ä¸­ `Application_BeginRequest` æ˜¯æ‡‰ç”¨ç¨‹å¼çš„ç¬¬ä¸€å€‹é€²å…¥é»ï¼Œä¹Ÿå¯ä»¥å¾é€™è£¡å–å¾— `culture` Cookie çš„å€¼ã€‚
 
-# °Ñ¦Ò¸ê®Æ
+# åƒè€ƒè³‡æ–™
 - [Get insight to build your first Multi-Language ASP.NET MVC 5 Web Application](https://www.codeproject.com/Articles/1160340/Get-insight-to-build-your-first-Multi-Language-ASP)
 - [Getting Started With ASP.NET MVC i18n](https://phrase.com/blog/posts/getting-started-with-asp-net-mvc-i18n/)
-- [ASP.NET MVC - ¨Ï¥Î MVC ¹ê§@¦h°ê»y¨t](https://dotblogs.com.tw/dc690216/2009/11/04/11401)
+- [ASP.NET MVC - ä½¿ç”¨ MVC å¯¦ä½œå¤šåœ‹èªç³»](https://dotblogs.com.tw/dc690216/2009/11/04/11401)

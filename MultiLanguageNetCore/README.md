@@ -2,7 +2,7 @@
 
 ## Program.cs
 
-### ³]©w¸ê·½ÀÉªº¸ô®|
+### è¨­å®šè³‡æºæª”çš„è·¯å¾‘
 
 ```
 builder.Services.AddLocalization(options =>
@@ -11,7 +11,7 @@ builder.Services.AddLocalization(options =>
 });
 ```
 
-### ³]©w¤ä´©ªº»y¨t
+### è¨­å®šæ”¯æ´çš„èªç³»
 
 ```cs
 var supportedCultures = new List<CultureInfo>()
@@ -33,26 +33,26 @@ app.UseRequestLocalization(app.Services.GetRequiredService<IOptions<RequestLocal
 
 ### RequestLocalizationOptions
 
-¦b *RequestLocalizationOptions* ªº°Ñ¼Æ³]©w¤¤¡A¦³¤@­Ó `RequestCultureProviders` ªº°Ñ¼Æ«üªº¬O´£¨Ñ»y¨t¨Ó·½ªº¤è¦¡¹w³]¦³3ºØ¡C
+åœ¨ *RequestLocalizationOptions* çš„åƒæ•¸è¨­å®šä¸­ï¼Œæœ‰ä¸€å€‹ `RequestCultureProviders` çš„åƒæ•¸æŒ‡çš„æ˜¯æä¾›èªç³»ä¾†æºçš„æ–¹å¼é è¨­æœ‰3ç¨®ã€‚
 
 - QueryStringRequestCultureProvider
 - CookieRequestCultureProvider
 - AcceptLanguageHeaderRequestCultureProvider
 
-¹w³]ªº°õ¦æ¶¶§Ç¡GQueryString => Cookie => Header
+é è¨­çš„åŸ·è¡Œé †åºï¼šQueryString => Cookie => Header
 
 #### QueryStringRequestCultureProvider
 
-±q QueryString ª½±µ³]©w»y¨t¡C
+å¾ QueryString ç›´æ¥è¨­å®šèªç³»ã€‚
 
 ```
 https://yourdomain.com?culture=en-us
 ```
 
 #### CookieRequestCultureProvider
-Cookie ªº»y¨t§PÂ_ªº Cookie ¦WºÙ¬O **.AspNetCore.Culture** ¡A­Èªº³W«h¬O **c=<lang>|uic=<lang>** ¡A ¨Ò¡G c=zh-tw|uic=zh-tw ¡C
+Cookie çš„èªç³»åˆ¤æ–·çš„ Cookie åç¨±æ˜¯ **.AspNetCore.Culture** ï¼Œå€¼çš„è¦å‰‡æ˜¯ **c=&lt;lang&gt;|uic=&lt;lang&gt;** ï¼Œ ä¾‹ï¼š c=zh-tw|uic=zh-tw ã€‚
 
-­Y­n§ó§ï cookie ¡A±N culture §ï¬°¨ä¥¦»y¨t
+è‹¥è¦æ›´æ”¹ cookie ï¼Œå°‡ culture æ”¹ç‚ºå…¶å®ƒèªç³»
 ```
     Response.Cookies.Append(  
         CookieRequestCultureProvider.DefaultCookieName,  
@@ -63,15 +63,15 @@ Cookie ªº»y¨t§PÂ_ªº Cookie ¦WºÙ¬O **.AspNetCore.Culture** ¡A­Èªº³W«h¬O **c=<lang
 
 #### AcceptLanguageHeaderRequestCultureProvider
 
-¬O¥Ñ Header ¤¤ªº **Accept-Languge** ªº­È¨Ó½Õ¾ã»y¨t¡C
+æ˜¯ç”± Header ä¸­çš„ **Accept-Languge** çš„å€¼ä¾†èª¿æ•´èªç³»ã€‚
 
 
-## ¸ê·½ÀÉ
+## è³‡æºæª”
 
-·s¼W *Resourcs* ¸ê®Æ§¨¡A¹w³] ¹ï Views ¤¤ªº¸ê®Æ¶i¦æ»y¨t³]©w¡A½Ğ¨Ì¾Ú Views ¤¤ªºµ²ºc¶i¦æ¸ê®Æ§¨·s¼W¡C¨Ò¡GViews/Home/Index.cshtml ´N­n¦bResources·s¼W *Views/Home/Index.<lang>.en-us.resx*
+æ–°å¢ *Resourcs* è³‡æ–™å¤¾ï¼Œé è¨­ å° Views ä¸­çš„è³‡æ–™é€²è¡Œèªç³»è¨­å®šï¼Œè«‹ä¾æ“š Views ä¸­çš„çµæ§‹é€²è¡Œè³‡æ–™å¤¾æ–°å¢ã€‚ä¾‹ï¼šViews/Home/Index.cshtml å°±è¦åœ¨Resourcesæ–°å¢ *Views/Home/Index.<lang>.en-us.resx*
 
-### Controller ¨ú­È
-DI *IStringLocalizer<Controller Name>* ¦b Controller ªº«Øºc¤l¤¤¡A¦A®Ú¾Ú Resource ¤¤©w¸qªº Key ­È¨Ó¨ú¸ê®Æ
+### Controller å–å€¼
+DI *IStringLocalizer<Controller Name>* åœ¨ Controller çš„å»ºæ§‹å­ä¸­ï¼Œå†æ ¹æ“š Resource ä¸­å®šç¾©çš„ Key å€¼ä¾†å–è³‡æ–™
 
 ```
 private readonly IStringLocalizer<HomeController> _stringLocalizer;
@@ -89,8 +89,8 @@ public IActionResult Index()
 }
 ```
 
-### Views ¨ú­È 
-Inject `IViewLocalizer` ¦A¥Î Key ­È¨ú¸ê®Æ
+### Views å–å€¼ 
+Inject `IViewLocalizer` å†ç”¨ Key å€¼å–è³‡æ–™
 ```
 @inject IViewLocalizer _localizer
 
@@ -99,11 +99,11 @@ Inject `IViewLocalizer` ¦A¥Î Key ­È¨ú¸ê®Æ
 
 ### ShareResource
 
-¦@¥Î¸ê®Æ¤£®Ú¾ÚControlle ©Î¬O Views ¨Ó¦U¦Û·s¼W¡C¥ı·s¼W `SharedResources.cs` ¬°ªÅªº cs ÀÉ¡A¦¹±M®×¬O·s¼W¦b `MultiLanguageNetCore.Resources` ³o­Ó namespace ¤¤¡A©Ò¥H¹ïÀ³ªº»y¨tÀÉ¤]­n¦b¹ïÀ³ªºnamespace¤¤¡A©Ò¥H·s¼W¦b `Resources/Resources/SharedResources.<lang>.resx` ³o­Óµ²ºc¤U¡C
+å…±ç”¨è³‡æ–™ä¸æ ¹æ“šControlle æˆ–æ˜¯ Views ä¾†å„è‡ªæ–°å¢ã€‚å…ˆæ–°å¢ `SharedResources.cs` ç‚ºç©ºçš„ cs æª”ï¼Œæ­¤å°ˆæ¡ˆæ˜¯æ–°å¢åœ¨ `MultiLanguageNetCore.Resources` é€™å€‹ namespace ä¸­ï¼Œæ‰€ä»¥å°æ‡‰çš„èªç³»æª”ä¹Ÿè¦åœ¨å°æ‡‰çš„namespaceä¸­ï¼Œæ‰€ä»¥æ–°å¢åœ¨ `Resources/Resources/SharedResources.<lang>.resx` é€™å€‹çµæ§‹ä¸‹ã€‚
 
-## °Ñ¦Ò¸ê®Æ
+## åƒè€ƒè³‡æ–™
 
 - [ASP.NET Core localization and translation with examples](https://lokalise.com/blog/asp-net-core-localization/)
-- [Globalization and Localization in ASP.NET Core ¡V Detailed](https://codewithmukesh.com/blog/globalization-and-localization-in-aspnet-core/)
-- [ASP.NET Core ¬°À³¥Î¥[¤W¦h°ê»y¨t¤Î¥»¦a¤Æ](https://www.dotblogs.com.tw/Null/2020/05/05/155552)
+- [Globalization and Localization in ASP.NET Core â€“ Detailed](https://codewithmukesh.com/blog/globalization-and-localization-in-aspnet-core/)
+- [ASP.NET Core ç‚ºæ‡‰ç”¨åŠ ä¸Šå¤šåœ‹èªç³»åŠæœ¬åœ°åŒ–](https://www.dotblogs.com.tw/Null/2020/05/05/155552)
 - [Building Multilingual Applications in ASP.NET Core](https://www.ezzylearning.net/tutorial/building-multilingual-applications-in-asp-net-core)
