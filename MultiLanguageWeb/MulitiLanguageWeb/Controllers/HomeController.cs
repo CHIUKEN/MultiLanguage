@@ -10,25 +10,6 @@ namespace MultiLanguageWeb.Controllers
     {
         public ActionResult Index(string culture)
         {
-            var langCookie = Request.Cookies["LangForMultiLanguageDemo"];
-
-            if (langCookie == null)
-            {
-                langCookie = new HttpCookie("LangForMultiLanguageDemo", culture)
-                {
-                    HttpOnly = true,
-                    Expires = DateTime.Now.AddMonths(6),
-                };
-                Response.AddHeader("Set-Cookie", "SameSite=Strict;Secure");
-                Response.AppendCookie(langCookie);
-            }
-            else
-            {
-                langCookie.Value = culture;
-                Response.AddHeader("Set-Cookie", "SameSite=Strict;Secure");
-                Response.SetCookie(langCookie);
-            }
-
             return View();
         }
 
